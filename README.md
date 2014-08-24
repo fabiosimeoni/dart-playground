@@ -1,4 +1,4 @@
 dart-playground
 ===============
 
-Playground to Experiment with Dart-based Stack.
+Playground to experiment with a `Dart`-based stack.
