@@ -1,8 +1,9 @@
 dart-playground
 ============
 
-A playground to experiment with a `Dart`-based stack.
+A playground to experiment with a `Dart`-based stack.  
 
+[![Build Status](https://drone.io/github.com/fabiosimeoni/dart-playground/status.png)](https://drone.io/github.com/fabiosimeoni/dart-playground/latest)
 
 ### Project types 
 
