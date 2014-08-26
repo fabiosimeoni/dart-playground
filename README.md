@@ -7,9 +7,8 @@ A playground to experiment with a `Dart`-based stack.
 
 ### Project types 
 
-- Projects define `package`s. The usual two broad types:
-	- *library packages* are those you build upon. 
-		- have *public* stuff (as well as private)
+- Projects define `package`s of two broad types:
+	- *library packages* are those you build upon: have some *public* stuff
 		- may depend on other such packages. 
 		- in `Java`, they'd be plain `jar`s with no entrypoint.
 	- *application packages* run on their two feet,  perhaps in the browser.  
