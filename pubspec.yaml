@@ -1,4 +1,7 @@
 name: playground
 description: A sample web application
 dependencies:
+  editor_build: any
+  path: any
   polymer: ">=0.13.0 <0.14.0"
+  core_elements: ">=0.2.0 <0.3.0"

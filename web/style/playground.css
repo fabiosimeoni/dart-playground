@@ -1,29 +1,16 @@
-
 body {
   font-family: Roboto, sans-serif;
   font-weight: lighter;
 }
-
-.outer {
-	
-	background: #5d637a;
-	height: 50px;
-	
-}
-
 .short {
-	height: 5opx;
+  height: 5 opx;
 }
-
 .tall {
-	height: 150px;
+  height: 140px;
 }
-
 .outer {
   background: #5d637a;
-  
 }
-
 .inner {
   background: #b4bfe1;
   margin: 5px;
