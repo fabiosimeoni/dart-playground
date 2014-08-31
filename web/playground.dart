@@ -15,5 +15,5 @@ part 'parts/part2.dart';
 const PLAYGROUND=1;
 
 void main() {
-  print(PART1+PART2+LIB2+PUBCONST);
+  print("main: ${PART1+PART2+LIB2+PUBCONST}");
 }

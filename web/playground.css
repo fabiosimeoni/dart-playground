@@ -1,9 +1,30 @@
 
 body {
-  background-color: #F8F8F8;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 14px;
-  font-weight: normal;
-  line-height: 1.2em;
-  margin: 15px;
+  font-family: Roboto, sans-serif;
+  font-weight: lighter;
+}
+
+.outer {
+	
+	background: #5d637a;
+	height: 50px;
+	
+}
+
+.short {
+	height: 5opx;
+}
+
+.tall {
+	height: 150px;
+}
+
+.outer {
+  background: #5d637a;
+  
+}
+
+.inner {
+  background: #b4bfe1;
+  margin: 5px;
 }

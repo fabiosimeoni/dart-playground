@@ -8,7 +8,24 @@
 
 	<packaging>pom</packaging>
 
+  <properties>
+    <snapshots-name>gcube-snapshots</snapshots-name>
+    <snapshots-url>http://maven.research-infrastructures.eu:8081/nexus/content/repositories/gcube-snapshots</snapshots-url>
+  </properties>
 
+  <distributionManagement>
+    <snapshotRepository>
+      <id>${snapshots-name}</id>
+      <url>${snapshots-url}</url>
+    </snapshotRepository>
+  </distributionManagement>
+
+  <repositories>
+      <repository>
+          <id>${snapshots-name}</id>
+          <url>${snapshots-url}</url>
+      </repository>
+  </repositories>
 
 	<build>
 		<plugins>

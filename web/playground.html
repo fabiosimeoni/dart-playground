@@ -1,18 +1,47 @@
 <!DOCTYPE html>
 
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Playground</title>
-    
-    <script async type="application/dart" src="playground.dart"></script>
-    <script async src="packages/browser/dart.js"></script>
-    
-    <link rel="stylesheet" href="playground.css">
-  </head>
-  <body>
-    <h1>Playground</h1>
-    
-    </body>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Playground</title>
+
+<link rel="stylesheet" href="playground.css">
+<link href="//fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
+
+<!-- polymer-dart deps -->
+<script src="packages/web_components/platform.js"></script>
+<script src="packages/web_components/dart_support.js"></script>
+
+<!-- polymer imports -->
+<link rel="import" href="/packages/polymer/polymer.html">
+
+</head>
+<body>
+
+	<h1>Playground</h1>
+
+	<p>
+		Lorem ipsum dolor sit amet, <em>consectetur adipiscing elit...</em>
+	</p>
+
+	<div class="outer short" horizontal layout>
+		<div class="inner" flex one>Alpha</div>
+		<div class="inner" flex four>Beta (flex)</div>
+		<div class="inner" flex one>Gamma</div>
+	</div>
+	
+	</p>
+	
+	 <div class="outer tall" vertical layout>
+    <div class="inner">Alpha</div>
+    <div class="inner" flex>Beta (flex)</div>
+    <div class="inner">Gamma</div>
+  </div>
+
+  <!-- dart setup -->
+  <script async type="application/dart" src="playground.dart"></script>
+  <script async src="packages/browser/dart.js"></script>
+
+</body>
 </html>
