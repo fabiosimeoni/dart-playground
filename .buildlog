@@ -694,3 +694,43 @@ build.dart --machine --changed=web/style/playground.css
 
 build.dart finished [105 ms]
 
+---
+build.dart --machine --changed=build/web/playground.dart.js --changed=build/web/playground.dart.precompiled.js ...
+
+build.dart finished [560 ms]
+
+---
+build.dart --machine --changed=build/web/style/playground.css
+
+build.dart finished [152 ms]
+
+---
+build.dart --machine --changed=pubspec.yaml
+
+build.dart finished [119 ms]
+
+---
+build.dart --machine --changed=pubspec.yaml
+
+build.dart finished [103 ms]
+
+---
+build.dart --machine --changed=pubspec.yaml
+
+build.dart finished [100 ms]
+
+---
+build.dart --machine --changed=README.md
+
+build.dart finished [168 ms]
+
+---
+build.dart --machine --changed=README.md
+
+build.dart finished [149 ms]
+
+---
+build.dart --machine --changed=README.md
+
+build.dart finished [108 ms]
+

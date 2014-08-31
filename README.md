@@ -80,5 +80,18 @@ A playground to experiment with a `Dart`-based stack.
 		    <link href="packages/playground/<lib-rel-path>/.css" rel="stylesheet">
 		 
 
+### CSS Preprocessing
 
+- there seems to be integration for both `sass` and `stylus`, going for the latter.
+  - prefer to rely on `node` rather than `ruby`
+  - as capable, looks cool
+  - https://github.com/learnboost/stylus 
+- (currently has broken dependencies, embedding source directly until fix) 
+- `build.dart` gets called by IDE on changes, integratin `stylus` is as simple as:
 
+	  	    void main(List<String> args) {
+  	        	buildStylus(args);
+  	        }
+  	        
+- would be cleaner to commit only pre-processed `.styl` forms, install `stylus` with `npm` on CI machine, and compile there.
+Not sure there's a strong advantage just now to make build longer and configure for excludes. 
