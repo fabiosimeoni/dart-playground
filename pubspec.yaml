@@ -1,7 +1,7 @@
 name: playground
 description: A sample web application
 dependencies:
-  
+
   #stylus integration deps, until package gets updated
   editor_build: any
   path: any
@@ -9,3 +9,9 @@ dependencies:
   
   polymer: any
   core_elements: any
+  paper_elements: any
+
+transformers:
+- polymer:
+    entry_points: 
+      web/playground.html

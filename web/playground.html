@@ -14,7 +14,10 @@
 <script src="packages/web_components/dart_support.js"></script>
 
 <!-- polymer imports -->
-<link rel="import" href="/packages/polymer/polymer.html">
+<link rel="import" href="packages/polymer/polymer.html">
+<link rel="import" href="packages/paper_elements/paper_input.html">
+
+<link rel="import" href="mycompo.html" unresolved>
 
 </head>
 <body>
@@ -22,26 +25,36 @@
 	<h1>Playground</h1>
 
 	<p>
-		Lorem ipsum dolor sit amet, <em>consectetur adipiscing elit...</em>
+		Lorem ipsum dolor sit amet...
 	</p>
 
-	<div class="outer short" horizontal layout>
+  <div id='mydiv'>
+   <paper-input id="sel" label="Type something..."></paper-input>
+  </div>
+  
+
+  <div>
+    <my-compo></my-compo>
+  </div>
+  
+  <div class="outer short" horizontal layout>
 		<div class="inner" flex one>Alpha</div>
 		<div class="inner" flex four>Beta (flex)</div>
 		<div class="inner" flex one>Gamma</div>
 	</div>
 	
-	</p>
+	<p></p>
+
+	<div class="outer tall" vertical layout>
+		<div class="inner">Alpha</div>
+		<div class="inner" flex>Beta (flex)</div>
+		<div class="inner">Gamma</div>
+	</div> 
+
+	<!-- dart setup -->
 	
-	 <div class="outer tall" vertical layout>
-    <div class="inner">Alpha</div>
-    <div class="inner" flex>Beta (flex)</div>
-    <div class="inner">Gamma</div>
-  </div>
-
-  <!-- dart setup -->
-  <script async type="application/dart" src="playground.dart"></script>
-  <script async src="packages/browser/dart.js"></script>
-
+	<script type="application/dart" src="playground.dart"></script>
+  <script src="packages/browser/dart.js"></script>
+  
 </body>
 </html>

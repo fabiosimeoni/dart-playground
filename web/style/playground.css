@@ -3,7 +3,7 @@ body {
   font-weight: lighter;
 }
 .short {
-  height: 5 opx;
+  height: 50px;
 }
 .tall {
   height: 140px;
@@ -13,5 +13,5 @@ body {
 }
 .inner {
   background: #b4bfe1;
-  margin: 5px;
+  margin: 6px;
 }

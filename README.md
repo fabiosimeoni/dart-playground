@@ -87,7 +87,7 @@ A playground to experiment with a `Dart`-based stack.
   - as capable, looks cool
   - https://github.com/learnboost/stylus 
 - (currently has broken dependencies, embedding source directly until fix) 
-- `build.dart` gets called by IDE on changes, integratin `stylus` is as simple as:
+- `build.dart` gets called by IDE on changes, integration `stylus` is as simple as:
 
 	  	    void main(List<String> args) {
   	        	buildStylus(args);
