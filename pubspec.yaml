@@ -6,12 +6,12 @@ dependencies:
   editor_build: any
   path: any
   
-  
-  polymer: any
+  collection: any
   core_elements: any
   paper_elements: any
+  polymer: any
+  di: ">=3.0.0 <4.0.0"
 
 transformers:
-- polymer:
-    entry_points: 
-      web/playground.html
+- polymer
+- di

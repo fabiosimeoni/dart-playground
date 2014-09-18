@@ -22,18 +22,17 @@ const PLAYGROUND=1;
 void main() {
 
   initPolymer().run(() {
-    
-    accessPolymer();
-    revealPolymer();
-    addPolymer();
-    print("main: ${PART1+PART2+LIB2+PUBCONST}");
+
+//    accessPolymer();
+//    revealPolymer();
+//    addPolymer();
+//    print("main: ${PART1+PART2+LIB2+PUBCONST}");
   
   });
-  
-  
 }
 
 accessPolymer() {
+
 
   document.querySelector('#sel')
                                 ..attributes['label']='changed by a script to float'

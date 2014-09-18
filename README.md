@@ -7,33 +7,35 @@ A playground to experiment with a `Dart`-based stack.
 
 ### Project types 
 
-- Projects define `package`s of two broad types:
-	- *library packages* are those you build upon: have some *public* stuff
-		- may depend on other such packages. 
-		- in `Java`, they'd be plain `jar`s with no entrypoint.
-	- *application packages* run on their two feet,  perhaps in the browser.  
-		- depend on library packages, but top-level: not depended upon. 
-		- in `Java` they'd be `war`s or executable `jar`s.
-	- `playground` is intentionally hybrid, for illustration purposes. 
+Projects define `package`s of two broad types:
+	
+- *library packages* are those you build upon, i.e. have some *public* stuff.
+	- may depend on other such packages. 
+	- in `Java`, they'd be plain `jar`s with no entrypoint.
 
-- in all cases, package code is organised in files that can be `import`ed **by relative location**:
+- *application packages* run on their two feet,  perhaps in the browser.  
+	- will depend on library packages, 	but are not depended upon. 
+	- in `Java` they'd be `war`s or executable `jar`s.
+	
+(`this playground` is intentionally hybrid, for illustration purposes.) 
+
+In all cases, package code is organised in files that can be `import`ed **by relative location**:
 
 	    import 'samedir.dart';
 	    import 'dir/file.dart';
 	    import  '../../../down/we/go/file.dart';
 
-	- we have to avoid relative path
 	
 ### Libraries 
 
-- in all package types, code is organised in...libraries again. 
-	- units of *visibility* and target of `import`s.
+- across all package types, code is organised in...*libraries* again (darn!).
+	- units of *visibility*
 	- grain is a tradeoff between 
-		- the convenience of import
-		- the safety of privacy.
-	- no such thing in  `Java`, but grain typically on par with `Java package` . 
-	- (code stuffed in a single file is implicitly in an anonymous library).
-
+		- the convenience of import: coarser grain makes for less imports
+		- the safety of privacy: smaller grain makes for more access control
+	- no such thing in  `Java`,  mapping depends on grain (class, package, set of packages) 
+	- I am of a the idea
+	
 -  libraries can be explicitly named and *can* spread across many files.
 	- one file serves as *header*, the others as *parts*. 
 	- a single `import` to clients: as if it were a single file.

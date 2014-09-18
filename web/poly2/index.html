@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8">
+
+<!-- polymer-dart deps -->
+<script src="packages/web_components/dart_support.js"></script>
+
+<!-- polymer imports -->
+<link rel="import" href="packages/polymer/polymer.html">
+
+</head>
+<body unresolved>
+
+  <!-- ----------------- --------------------------------------- usage -->
+
+  <button>change from client</button>
+  <label></label>
+
+  <my-poly></my-poly>
+  
+  <!-- ----------------- --------------------------------------- definition -->
+  
+  <polymer-element name="my-poly">
+  
+  <template>
+    <p>property={{prop}}</p>
+    <button on-click="{{change}}">change from polymer</button>
+   </template>
+     
+  </polymer-element>
+
+
+	<!------------------------------------------------------------- dart setup -->
+	
+	<script type="application/dart" src="main.dart"></script>
+  <script src="packages/browser/dart.js"></script>
+  
+</body>
+</html>

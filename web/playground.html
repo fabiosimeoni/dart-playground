@@ -18,9 +18,11 @@
 <link rel="import" href="packages/paper_elements/paper_input.html">
 
 <link rel="import" href="mycompo.html" unresolved>
+<link rel="import" href="inner.html" unresolved>
+<link rel="import" href="testcompo.html" unresolved>
 
 </head>
-<body>
+<body unresolved>
 
 	<h1>Playground</h1>
 
@@ -32,9 +34,13 @@
    <paper-input id="sel" label="Type something..."></paper-input>
   </div>
   
+  <test-compo id='test'></test-compo>
 
   <div>
-    <my-compo></my-compo>
+    <my-compo>
+      <my-inner name="one"></my-inner>
+      <my-inner name="two"></my-inner>
+    </my-compo>
   </div>
   
   <div class="outer short" horizontal layout>

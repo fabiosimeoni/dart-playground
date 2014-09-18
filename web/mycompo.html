@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 
 <link rel="import" href="packages/polymer/polymer.html">
+<link rel="import" href="inner.html">
 
 <polymer-element name="my-compo">
   
   <template>
     <p>Hello from inside a custom element!</p>
+    <content select="h1"></content>
+    <template repeat="{{name in names}}">
+      <my-inner name="{{name}}"></my-inner>
+    </template>
   </template>
   
   <script type="application/dart" src="mycompo.dart"></script>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+
+<script src="packages/web_components/dart_support.js"></script>
+<link rel="import" href="packages/polymer/polymer.html">
+<script type="application/dart" src="main.dart"></script>
+  
+</head>
+
+<body unresolved>
+
+  <!-- ----------------- --------------------------------------- outside -->
+
+  <my-poly></my-poly>
+  
+
+  <!-- ----------------- --------------------------------------- inside -->
+  
+  <polymer-element name="my-poly" mydefault>
+  
+  <template>
+    <p id="shadow">Hello</p>
+   </template>
+     
+  </polymer-element>
+  
+</body>
+</html>

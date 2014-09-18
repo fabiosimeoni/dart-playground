@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+
+<script src="packages/web_components/dart_support.js"></script>
+<link rel="import" href="packages/polymer/polymer.html">
+<script type="application/dart" src="main.dart"></script>
+  
+</head>
+
+<body unresolved>
+
+  <!-- ----------------- --------------------------------------- outside -->
+ 
+ <!-- <my-poly ctrl='one'></my-poly> --> 
+  
+ <my-one-poly is="my-poly"></my-one-poly>
+ 
+  <!-- ----------------- --------------------------------------- inside -->
+
+  <polymer-element name="my-one-poly"></polymer-element>
+    
+  <polymer-element name="my-poly">
+  
+   <template>
+	   <p>Hello {{model.msg}}</p>
+  </template>
+     
+  </polymer-element>
+
+</body>
+</html>
