@@ -11,6 +11,8 @@ void main() {
   
   injector = new ModuleInjector([myServiceModule,myModule]);
   
+  ControllerFactory.init(injector);
+  
    initPolymer();
   
   //Timer timer = new Timer(new Duration(milliseconds:2000), () => model.msg="changed" );
@@ -25,6 +27,35 @@ Module myServiceModule = new Module()..bind(MyService, toImplementation: MySpeci
 Module myModule = new Module()
                     ..bind(MyOtherController)
                     ..bind(MyModel);
+                      
+
+
+class ControllerFactory {
+  
+  static ModuleInjector injector;
+  static Map<String,Type> typemap = {};
+  
+  static init(ModuleInjector i) {
+    
+    injector = i;
+    
+    ClassMirror controller = reflectClass(Controller);
+    
+    injector.types.forEach((type) {
+      
+      if (reflectClass(type).isSubclassOf(controller))
+        typemap["pippo"]= type;
+      
+    });
+  }
+  
+  static Controller resolve(String key) {
+    
+      return injector.get(typemap[key]);
+  }
+  
+  
+}
 
 abstract class Controller<M> {
 
