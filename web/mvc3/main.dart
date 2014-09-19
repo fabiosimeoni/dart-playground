@@ -2,31 +2,33 @@ import 'package:polymer/polymer.dart';
 import 'package:di/di.dart';
 import 'package:di/annotations.dart';
 import 'dart:mirrors';
-//import 'dart:html';
-//import 'dart:async';
+import 'package:event_bus/event_bus.dart';
 
 ModuleInjector injector;
 
 void main() {
   
-  injector = new ModuleInjector([myServiceModule,myModule]);
+  
+  injector = new ModuleInjector([appModule,myServiceModule,myModule]);
+
+  MyModelContext ctx = injector.get(MyModelContext);
   
   ControllerFactory.init(injector);
   
-   initPolymer();
+  initPolymer();
   
-  //Timer timer = new Timer(new Duration(milliseconds:2000), () => model.msg="changed" );
-  
-  
+
 }
 
 // view ----> viewmodel <----- controller ------> app
+Module appModule = new Module()..bind(EventBus, toValue: new EventBus());
+
 
 Module myServiceModule = new Module()..bind(MyService, toImplementation: MySpecificService);
 
 Module myModule = new Module()
-                    ..bind(MyModelBridge)
-                    ..bind(MyModel, toInstanceOf: MyModelBridge);
+                    ..bind(MyModelContext)
+                    ..bind(MyModel);
 
 
 
@@ -116,30 +118,41 @@ abstract class MyPoly extends Polybase<MyModel> {
   MyPoly.created() : super.created();
 }
 
-
+@Injectable()
 class MyModel extends Model with Observable {//test subject
   
+ EventBus bus;
+  
+ MyModel(this.bus);
+ 
  @observable 
  String msg = "default";
   
   change() {
     print("acting on data");
+    bus.fire(new MyModelEvent());
   }
   
 }
 
+class MyModelEvent {
+  
+  
+  process(MyModelContext ctx) {
+    ctx.service.dothings();
+  }
+  
+}
+
+
+typedef void MyEvent(MyModelContext t);
+
 @Injectable()
-class MyModelBridge extends MyModel {
+class MyModelContext {
   
   MyService service;
-   
-  MyModelBridge(this.service) {
-    msg = "other";
-  }
   
-  change() {
-     super.change();
-     service.dothings();
+  MyModelContext(EventBus bus, this.service) {
+    bus.on(MyModelEvent).listen((MyModelEvent e) {e.process(this);});
   }
-  
 }
