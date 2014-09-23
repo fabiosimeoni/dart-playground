@@ -9,6 +9,10 @@ abstract class MyService {
 
   final Logger _log = new Logger("my-service");
   
+  loadingthings(){
+      _log.info("loading things with ${toString()}");
+    }
+  
   dothings(){
     _log.info("doing things with ${toString()}");
   }

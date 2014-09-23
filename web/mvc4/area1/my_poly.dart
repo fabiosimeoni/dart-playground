@@ -35,8 +35,11 @@ class MyModelBridge extends MyModel {
   
   MyService service;
    
-  MyModelBridge(this.service) {
+  MyModelBridge(this.service, EventBus bus) {
     msg = "other";
+    bus.on(Attached).listen((_) {
+      service.loadingthings();
+    });
   }
   
   change() {

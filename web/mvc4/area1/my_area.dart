@@ -2,7 +2,7 @@ part of area1;
 
 
 @CustomTag(MyArea.name) 
-abstract class MyArea extends Polybase<Object> {
+abstract class MyArea extends Polybase<Object> with Area {
  
   static const name = "my-area";
   
@@ -11,8 +11,14 @@ abstract class MyArea extends Polybase<Object> {
   MyArea.created() : super.created() {
     
     bus = instanceOf(EventBus);
-    bus.fire(this);
     
+  }
+  
+  @override
+  attached() {
+    
+    bus.fire(const Attached());
+        
   }
   
   
