@@ -12,7 +12,17 @@ abstract class MyPoly extends Polybase<MyModel> {
  
   static const name = "my-poly";
  
-  MyPoly.created() : super.created();
+  MyPoly.created() : super.created() {
+  
+    EventBus bus = instanceOf(EventBus);
+    
+    bus.on(Attached).listen((_) {
+      
+      model.load();
+      
+    });
+    
+  }
 }
 
 
@@ -35,11 +45,12 @@ class MyModelBridge extends MyModel {
   
   MyService service;
    
-  MyModelBridge(this.service, EventBus bus) {
+  MyModelBridge(this.service) {
     msg = "other";
-    bus.on(Attached).listen((_) {
-      service.loadingthings();
-    });
+  }
+  
+  load() {
+    service.dothings();
   }
   
   change() {
