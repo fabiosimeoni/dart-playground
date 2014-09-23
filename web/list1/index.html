@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+
+<script src="packages/web_components/dart_support.js"></script>
+<link rel="import" href="packages/polymer/polymer.html">
+<link rel="import" href="packages/core_elements/core_list_dart.html">
+<script type="application/dart" src="main.dart"></script>
+  
+</head>
+
+<body unresolved>
+
+  <!-- ----------------- --------------------------------------- outside -->
+ 
+  <my-poly></my-poly>
+  
+  
+   <!-- ----------------- --------------------------------------- inside -->
+    
+  <polymer-element name="my-poly-item">
+	   <template>
+	     <span>{{item.val}}</span>
+	 </template>
+	</polymer-element>
+	
+	
+  <polymer-element name="my-poly">
+  
+	   <template>
+	   
+	    <style>
+	    
+		     .item {
+		      box-sizing: border-box;
+		      height: 50px;
+		      border-bottom: 1px solid #ddd;
+		      padding: 4px;
+		      cursor: default;
+		      background-color: white;
+		      overflow: hidden;
+		    }
+		
+		    .selected {
+		      background: silver;
+		    }
+    
+     </style>
+	   
+	   	 
+		 <core-list-dart data="{{data}}" height="40">
+	    <template>
+	      <div class="{{ {item: true, selected: selected} }}">
+	          <my-poly-item item='{{self}}'></my-poly-item>
+	      </div>
+	    </template>
+	  </core-list-dart>
+	
+	  </template>
+     
+  </polymer-element>
+
+</body>
+</html>
