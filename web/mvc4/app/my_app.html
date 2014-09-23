@@ -4,6 +4,7 @@
 <head>
 
   <link rel="import" href="packages/polymer/polymer.html">
+  <link rel="import" href="packages/core_elements/core_pages.html">
   <link rel="import" href="../area1/my_area.html">
 
 </head>
@@ -13,15 +14,22 @@
   <polymer-element name="my-app" model='App'> 
    
    <template>
-     <h1>App: {{model.area}}</h1>
-     <template if="{{ model.area == 'myarea'}}">
+     <h1>App</h1>
+      <button on-click="{{model.toggle}}">Change Area</button>
+     <div>
+     <core-pages selected='{{model.area}}'>
+      <my-area></my-area>
+      <p>other page</p> 
+     </core-pages>
+     </div>
+     <!-- <template if="{{ model.area == 'myarea'}}">
        <my-area></my-area>   
      </template>
      <template if="{{ model.area != 'myarea'}}">
        <p>other page</p>
-     </template>
+     </template> -->
      <p>
-      <button on-click="{{model.toggle}}">Change Area</button>
+      
      </p>
    </template> 
    

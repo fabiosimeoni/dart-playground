@@ -2,7 +2,7 @@ part of area1;
 
 
 @CustomTag(MyArea.name) 
-abstract class MyArea extends Polybase<Area1> {
+abstract class MyArea extends Polybase<Area> {
  
   static const name = "my-area";
   
@@ -17,25 +17,15 @@ abstract class MyArea extends Polybase<Area1> {
 
 
 @Injectable()
-class Area1 extends Area {
+class Area {
   
     EventBus bus;
     
-    bool firstActivation = true;
-
-    Area1(this.bus);
+    Area(this.bus);
     
     activate() {
       
-      if (firstActivation==true) {
-        
-        bus.fire(const Activation.first());
-        
-        firstActivation=false;
-      
-      }
-      else
-        bus.fire(const Activation());
+      bus.fire(const Activation());
         
       
     }

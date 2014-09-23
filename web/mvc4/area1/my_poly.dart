@@ -39,8 +39,7 @@ class MyModelBridge extends MyModel {
   MyModelBridge(this.service, EventBus bus) {
     msg = "other";
     bus.on(Activation).listen((Activation activation) {
-      if (activation.firstTime)
-        load();
+      load();
      }
     );
   }
