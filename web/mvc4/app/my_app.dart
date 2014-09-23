@@ -12,7 +12,7 @@ abstract class MyApp extends Polybase<App> {
 @Injectable()
 class App extends Observable {
   
-  @observable String area = "myarea";
+  @observable String area = "other";
   
   toggle() {
     area = (area == "myarea") ? 'other' : 'myarea';

@@ -16,6 +16,7 @@ part 'area1/my_area.dart';
 part 'area1/my_poly.dart';
 
 Module area1_module = new Module()..bind(MyService, toImplementation: MySpecificService)
+                                  ..bind(Area1)
                                   ..bind(MyModelBridge)
                                   ..bind(MyModel, toInstanceOf: MyModelBridge);
 

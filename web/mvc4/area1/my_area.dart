@@ -2,24 +2,42 @@ part of area1;
 
 
 @CustomTag(MyArea.name) 
-abstract class MyArea extends Polybase<Object> with Area {
+abstract class MyArea extends Polybase<Area1> {
  
   static const name = "my-area";
   
-  EventBus bus;
+  MyArea.created() : super.created();
   
-  MyArea.created() : super.created() {
-    
-    bus = instanceOf(EventBus);
-    
-  }
-  
-  @override
   attached() {
-    
-    bus.fire(const Attached());
-        
+    model.activate();
   }
   
   
+}
+
+
+@Injectable()
+class Area1 extends Area {
+  
+    EventBus bus;
+    
+    bool firstActivation = true;
+
+    Area1(this.bus);
+    
+    activate() {
+      
+      if (firstActivation==true) {
+        
+        bus.fire(const Activation.first());
+        
+        firstActivation=false;
+      
+      }
+      else
+        bus.fire(const Activation());
+        
+      
+    }
+     
 }

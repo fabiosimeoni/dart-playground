@@ -1,6 +1,7 @@
 library common;
 
 import 'package:di/di.dart';
+import 'package:di/annotations.dart';
 import 'package:polymer/polymer.dart';
 import 'package:logging/logging.dart';
 

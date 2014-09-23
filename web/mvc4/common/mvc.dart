@@ -1,5 +1,6 @@
 part of common;
 
-abstract class Area {}
 
-abstract class Model {}
+abstract class Area extends Model {}
+
+abstract class Model {} 
