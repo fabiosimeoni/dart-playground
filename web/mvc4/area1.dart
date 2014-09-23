@@ -13,11 +13,17 @@ import 'common.dart';
 
 part 'area1/my_service.dart';
 part 'area1/my_area.dart';
-part 'area1/my_poly.dart';
+part 'area1/my_poly.dart'; 
 
-Module area1_module = new Module()..bind(MyService, toImplementation: MySpecificService)
-                                  ..bind(Area)
-                                  ..bind(MyModelBridge)
-                                  ..bind(MyModel, toInstanceOf: MyModelBridge);
+init() {
+  
+  var module = new Module()..bind(MyService, toImplementation: MySpecificService)
+                                    ..bind(Area)
+                                    ..bind(MyModelBridge)
+                                    ..bind(MyModel, toInstanceOf: MyModelBridge);
+
+  
+  Dependencies.add(module);
+}
 
 main() {}

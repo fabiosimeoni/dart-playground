@@ -11,7 +11,7 @@ import 'package:polymer/polymer.dart';
 import 'package:logging/logging.dart';
 
 import 'common.dart';
-import 'area1.dart';
+import 'area1.dart' as area1;
 
 part 'app/my_app.dart';
 
@@ -19,9 +19,6 @@ part 'app/my_app.dart';
 
 final Logger _log = new Logger('app');
 
-Module app_module = new Module()
-                    ..bind(App)
-                    ..bind(EventBus, toValue: new EventBus());
 
 
 init() {
@@ -32,8 +29,17 @@ init() {
     });
 
     _log.info("init app");
+    
+    area1.init();
+
+    Module module = new Module()
+                        ..bind(App)
+                        ..bind(EventBus, toValue: new EventBus());
+
+    
+    Dependencies.add(module);
       
-    Dependencies.init([app_module,area1_module]); 
+    Dependencies.init(); 
     
     initPolymer();
 

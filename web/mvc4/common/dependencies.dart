@@ -2,12 +2,17 @@ part of common;
 
 class Dependencies {
   
+  static List<Module> modules = [];
   static ModuleInjector injector;
   static Map<String,Type> typemap = {};
   
-  static init(List<Module> mods) {
+  static add(Module module) {
+    modules.add(module);
+  }
+  
+  static init() {
     
-    injector= new ModuleInjector(mods);
+    injector= new ModuleInjector(modules);
   
     injector.types.forEach((type) {
        typemap[type.toString()]= type;
