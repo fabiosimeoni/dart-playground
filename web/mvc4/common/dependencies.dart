@@ -10,7 +10,7 @@ class Dependencies {
     modules.add(module);
   }
   
-  static init() {
+  static configure() {
     
     injector= new ModuleInjector(modules);
   

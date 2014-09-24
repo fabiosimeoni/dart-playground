@@ -39,7 +39,7 @@ init() {
     
     Dependencies.add(module);
       
-    Dependencies.init(); 
+    Dependencies.configure(); 
     
     initPolymer();
 

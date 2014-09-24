@@ -15,13 +15,16 @@
    
    <template>
      <h1>App</h1>
-      <button on-click="{{model.toggle}}">Change Area</button>
+     
+     <button on-click="{{model.toggle}}">Change Area</button>
+     
      <div>
      <core-pages selected='{{model.area}}'>
       <my-area></my-area>
       <p>other page</p> 
      </core-pages>
      </div>
+     
      <!-- <template if="{{ model.area == 'myarea'}}">
        <my-area></my-area>   
      </template>
